@@ -1,4 +1,4 @@
- /* App.css */
+/* UsersList.css */
 .users-table {
   width: 100%;
   border-collapse: collapse;
@@ -27,7 +27,7 @@
   background-color: #e0f7fa;
 }
 
-p {
+.no-users {
   text-align: center;
   font-size: 18px;
   color: #777;

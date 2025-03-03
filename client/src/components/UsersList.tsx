@@ -1,21 +1,15 @@
 import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
-import "./App.css";
+import './UsersList.css';  // Import the CSS file
 
 const socket = io("http://localhost:5000");
 
-interface User {
-  id: number;
-  name: string;
-  gender: string;
-}
-
-function App() {
-  const [users, setUsers] = useState<User[]>([]);
+function UsersList() {
+  const [users, setUsers] = useState<any[]>([]);
 
   useEffect(() => {
-    socket.on("users", (data: User[]) => {
-      console.log("Received users:", data);
+    socket.on("users", (data) => {
+      console.log("Received users:", data); // Log to check data structure
       setUsers(data);
     });
 
@@ -31,26 +25,24 @@ function App() {
         <table className="users-table">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Username</th>
+              <th>Name</th>
               <th>Gender</th>
             </tr>
           </thead>
           <tbody>
-            {users.map((user) => (
-              <tr key={user.id}>
-                <td>{user.id}</td>
-                <td>{user.name}</td>
+            {users.map((user, index) => (
+              <tr key={user['user-id'] || index}>
+                <td>{user['user-name']}</td>
                 <td>{user.gender}</td>
               </tr>
             ))}
           </tbody>
         </table>
       ) : (
-        <p>No users found</p>
+        <div className="no-users">No users found</div>
       )}
     </div>
   );
 }
 
-export default App;
+export default UsersList;
