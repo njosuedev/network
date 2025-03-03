@@ -39,6 +39,6 @@ This project is licensed under the **MIT License**.
 
 - **Name**: NIYOMWUNGERI Josue
 - **GitHub**: [github.com/njosuedev](https://github.com/njosuedev)
-- **More**: [@njosuedev](@njosuedev)
+- **LinkedIn**: [LinkedIn](https://rw.linkedin.com/in/njosuedev)
 
 For inquiries or assistance, feel free to contact the maintainer.
